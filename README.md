@@ -1,4 +1,4 @@
-### MacOs: install and config Vagrant & VirtualBox using brew.
+## MacOs: install and config Vagrant & VirtualBox using brew.
 
 <p align="center">
   <img src="https://blog.octo.com/wp-content/uploads/2015/10/vagrant.jpg">
