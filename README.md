@@ -1,8 +1,7 @@
-# macos-install-vagrant-virtualbox
-How install Vagrant and Virtual box using brew
+### MacOs instal Vagrant & VirtualBox
+How install Vagrant and Virtual box using brew. 
 
-### Install Vagrant
-Vagrant uses Virtualbox to manage the virtual dependencies 
+Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases production parity, and makes the "works on my machine" excuse a relic of the past.
 
 **1) Update Brew**
 ``` console
@@ -71,11 +70,38 @@ installer: Package name is Oracle VM VirtualBox
 $ brew cask reinstall --force virtualbox --verbose --debug
 ```
 
-  _6.3_) If you encounter another error like this, during execution:
-`Error: Kernel.exit`
-
-  _6.4_) Go to Settings & Privacy in your configs in Mac, and allow Oracle Extension. And repeat step #6.2 See this: [here](https://developer.apple.com/library/archive/technotes/tn2459/_index.html)
+  _6.3_) If you encounter another error like this `Error: Kernel.exit` during execution, go to Settings & Privacy in your configs in Mac, and allow Oracle Extension. And repeat step #6.2 see [here](https://developer.apple.com/library/archive/technotes/tn2459/_index.html), otherwise just pass.
   
 **7)** Remove any older versions from the cellar
 `$ brew cleanup`
 
+**8)** Now add the Vagrant box you want to use. See more infos about Boxes [here](https://www.vagrantup.com/intro/getting-started/boxes.html) 
+I used Windows 10 with visual studio 2015 (see box [here](senglin/win-10-enterprise-vs2015community)), you can use some version of Ubuntu ([hashicorp/precise64](https://app.vagrantup.com/hashicorp/boxes/precise64))or any other, following the same path.
+
+```console
+$ vagrant box add senglin/win-10-enterprise-vs2015community
+```
+
+You can find more boxes at Vagrant Cloud. 
+Now create a test directory and cd into the test directory. Then we'll initialize the vagrant machine.
+
+```
+$ vagrant init win-10-enterprise-vs2015community
+```
+### Up And SSH
+It is time to boot your first Vagrant environment. Now lets start the machine using the following command from your terminal:
+
+```console
+$ vagrant up
+```
+
+You can ssh into the machine now.
+
+```console
+$ vagrant ssh
+```
+
+Halt the vagrant machine now.
+```console
+$ vagrant halt
+```
