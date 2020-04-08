@@ -4,6 +4,7 @@ How install Vagrant and Virtual box using brew
 ### Install Vagrant
 Vagrant uses Virtualbox to manage the virtual dependencies 
 
+**1) Update Brew**
 ``` console
 $ brew update              
 Updated 2 taps (homebrew/core and homebrew/cask).
@@ -13,6 +14,7 @@ broot               newman              serverless          syncthing
 keyshot             pdfelement          pycharm             pycharm-ce
 ```
 
+**2) Install vagrant**
 ``` console
 $ brew cask install vagrant   
 ==> Downloading https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_6
@@ -28,6 +30,7 @@ installer: The install was successful.
 🍺  vagrant was successfully installed!
 ```
 
+**3) Install vagrant-manager**
 ```console
 $ brew cask install vagrant-manager
 Updating Homebrew...
@@ -45,4 +48,34 @@ alt-tab                                  segger-embedded-studio-for-arm
 🍺  vagrant-manager was successfully installed!
 ```
 
+**4) Searches all known Casks for a partial or exact match**
+`$ brew search virtualbox`
+
+**5) Displays information about the given Cask**
+` $ brew cask info virtualbox`
+
+**6) Install the given cask - virtualbox**
+`$ brew cask install virtualbox`
+
+  _6.1_) If return an error like the one below. This is a macOS issue because of secure kext loading in High Sierra.
+```console
+Error: Failure while executing; 
+...
+
+Here's the output:
+installer: Package name is Oracle VM VirtualBox
 ```
+
+  _6.2_) So, try this and will work: 
+```console
+$ brew cask reinstall --force virtualbox --verbose --debug
+```
+
+  _6.3_) If you encounter another error like this, during execution:
+`Error: Kernel.exit`
+
+  _6.4_) Go to Settings & Privacy in your configs in Mac, and allow Oracle Extension. And repeat step #6.2 See this: [here](https://developer.apple.com/library/archive/technotes/tn2459/_index.html)
+  
+**7)** Remove any older versions from the cellar
+`$ brew cleanup`
+
