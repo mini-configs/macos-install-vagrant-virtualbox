@@ -1,5 +1,8 @@
-### MacOs install Vagrant & VirtualBox
-How install Vagrant and Virtual box using brew. 
+### MacOs: install and config Vagrant & VirtualBox using brew.
+
+<p align="center">
+  <img src="https://blog.octo.com/wp-content/uploads/2015/10/vagrant.jpg">
+</p>
 
 Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases production parity, and makes the "works on my machine" excuse a relic of the past.
 
