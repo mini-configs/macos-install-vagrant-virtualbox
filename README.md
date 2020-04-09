@@ -91,11 +91,69 @@ Now create a test directory and cd into the test directory. Then we'll initializ
 ```
 $ vagrant init win-10-enterprise-vs2015community
 ```
+
 ### Up And SSH
 It is time to boot your first Vagrant environment. Now lets start the machine using the following command from your terminal:
 
 ```console
 $ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'senglin/win-10-enterprise-vs2015community' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: 1.0.0
+==> default: Loading metadata for box 'senglin/win-10-enterprise-vs2015community'
+    default: URL: https://vagrantcloud.com/senglin/win-10-enterprise-vs2015community
+==> default: Adding box 'senglin/win-10-enterprise-vs2015community' (v1.0.0) for provider: virtualbox
+    default: Downloading: https://vagrantcloud.com/senglin/boxes/win-10-enterprise-vs2015community/versions/1.0.0/providers/virtualbox.box
+==> default: Box download is resuming from prior download progress
+    default: Download redirected to host: vagrantcloud-files-production.s3.amazonaws.com
+==> default: Successfully added box 'senglin/win-10-enterprise-vs2015community' (v1.0.0) for 'virtualbox'!
+==> default: Importing base box 'senglin/win-10-enterprise-vs2015community'...
+==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'senglin/win-10-enterprise-vs2015community' version '1.0.0' is up to date...
+==> default: Setting the name of the VM: mirian_default_1586431978800_50181
+Vagrant is currently configured to create VirtualBox synced folders with
+the `SharedFoldersEnableSymlinksCreate` option enabled. If the Vagrant
+guest is not trusted, you may want to disable this option. For more
+information on this option, please refer to the VirtualBox manual:
+
+  https://www.virtualbox.org/manual/ch04.html#sharedfolders
+
+This option can be disabled globally with an environment variable:
+
+  VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
+
+or on a per folder basis within the Vagrantfile:
+
+  config.vm.synced_folder '/host/path', '/guest/path', SharedFoldersEnableSymlinksCreate: false
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 3389 (guest) => 3389 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+    default: 5985 (guest) => 55985 (host) (adapter 1)
+    default: 5986 (guest) => 55986 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: WinRM address: 127.0.0.1:55985
+    default: WinRM username: vagrant
+    default: WinRM execution_time_limit: PT2H
+    default: WinRM transport: negotiate
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default: 
+    default: Guest Additions Version: 5.0.4
+    default: VirtualBox Version: 6.1
+==> default: Mounting shared folders...
+    default: /vagrant => /Users/username
 ```
 
 You can ssh into the machine now.
