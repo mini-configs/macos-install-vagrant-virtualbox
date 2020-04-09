@@ -165,4 +165,9 @@ $ vagrant ssh
 Halt the vagrant machine now.
 ```console
 $ vagrant halt
+
+==> default: Attempting graceful shutdown of VM...
+==> default: Forcing shutdown of VM...
 ```
+
+Now go ahead and open up the VirtualBox application. You will see running. VirtualBox is letting us know that you box is running properly. 
