@@ -85,6 +85,8 @@ I used Windows 10 with visual studio 2015 (see box [here](senglin/win-10-enterpr
 $ vagrant box add senglin/win-10-enterprise-vs2015community
 ```
 
+Make sure your internet does not go down during the process #8. This may return an error at the end of the download. Perform the procedure if an error occurs, on a stable connection and without using a proxy or vpn.
+
 You can find more boxes at Vagrant Cloud. 
 Now create a test directory and cd into the test directory. Then we'll initialize the vagrant machine.
 
@@ -170,4 +172,8 @@ $ vagrant halt
 ==> default: Forcing shutdown of VM...
 ```
 
-Now go ahead and open up the VirtualBox application. You will see running. VirtualBox is letting us know that you box is running properly. 
+Now go ahead and open up the VirtualBox application. You will see running when you use `vagrand up` and VirtualBox is letting us know that you box is running properly. 
+
+<p align="center">
+  <img src="virtualbox.png" width="500px">
+</p>
